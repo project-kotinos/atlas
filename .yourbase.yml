@@ -1,7 +1,7 @@
 dependencies:
   build:
-   - maven:3.5.4
-   - java:11.0.8
+  - maven:3.3.3
+  - java:8.252.09
 
 build_targets:
   - name: default
@@ -9,8 +9,7 @@ build_targets:
       image: yourbase/yb_ubuntu:18.04
     commands:
       - mvn -B -Drat.numUnapprovedLicenses=100 install
-    environment:
-      - MAVEN_OPTS="-Xms2g -Xmx2g"
+
 ci:
   builds:
     - name: default
