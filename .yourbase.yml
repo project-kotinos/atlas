@@ -9,6 +9,8 @@ build_targets:
       image: yourbase/yb_ubuntu:18.04
     commands:
       - mvn -B -Drat.numUnapprovedLicenses=100 install
+    environment:
+      - MAVEN_OPTS="-Xms2g -Xmx2g"
 ci:
   builds:
     - name: default
