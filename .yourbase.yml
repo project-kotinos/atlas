@@ -2,11 +2,15 @@ dependencies:
   build:
   - maven:3.5.0
   - java:8.252.09
+  - python:3.7.8
 
 build_targets:
   - name: default
     container:
       image: yourbase/yb_ubuntu:18.04
+    environment:
+      - MAVEN_OPTS=-Xms2g -Xmx2g
+
     commands:
       - mvn -B -Drat.numUnapprovedLicenses=100 package
 
