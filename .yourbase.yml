@@ -10,8 +10,9 @@ build_targets:
       image: yourbase/yb_ubuntu:18.04
     environment:
       - MAVEN_OPTS=-Xms2g -Xmx2g
-
     commands:
+      - pip install -r intg/src/main/python/requirements.txt
+      - pip install apache-atlas
       - mvn -B -Drat.numUnapprovedLicenses=100 package
 
 ci:
